@@ -1,0 +1,11 @@
+db.createCollection("user")
+db.createCollection("course")
+db.createCollection("course_user")
+db.createCollection("module")
+db.createCollection("rating")
+
+db.user.createIndex( { id: 1 }, { unique: true } )
+db.courses.createIndex( { id: 1 }, { unique: true } )
+db.module.createIndex( { id: 1 }, { unique: true } )
+db.user.createIndex( { email: 1 }, { unique: true } )
+db.course_user.createIndex( { id_user: 1 }, { unique: true } )

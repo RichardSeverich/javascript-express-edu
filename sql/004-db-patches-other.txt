@@ -1,0 +1,12 @@
+# Execute the following command in order to verify the data base.
+show dbs
+show collections
+db.user.find().pretty()
+
+# Para eliminar una coleccion.
+db.product.drop()
+
+# Para eliminar una base de datos.
+db.dropDatabase();
+
+

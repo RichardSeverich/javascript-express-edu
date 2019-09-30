@@ -1,0 +1,2 @@
+docker pull mongo:4.1
+docker run -d --name mongodb -p 27017:27017 mongo:4.1

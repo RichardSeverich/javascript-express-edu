@@ -3,17 +3,17 @@ This API performs POST, GET, PUT and DELETE.
 This API is about a store and has two end points users and courses. 
 For the elaboration of this API we used the JavaScript, NodeJS, express and mongoDB
 
-## Prerequisites ðŸš€
+## Prerequisites 🚀
 
 1. Install Windows 10    
 2. Install Node.js version 8.9.4.   
 
-## Installation ðŸ”§
+## Installation 🔧
 
 1. Clone Repository:
 2. Install Dependencies: npm install
 
-## Usage (Execute) âš™ï¸
+## Usage (Execute) ⚙️
 
 1. npm start
 
@@ -53,7 +53,7 @@ BODY:
 
 ```
 
-## Contributing ðŸ–‡ï¸
+## Contributing 🖇️
 
 1. Fork it!
 2. Create your feature branch: `git checkout -b issue/O&D-15632`
@@ -61,11 +61,11 @@ BODY:
 4. Push to the branch: `git push origin issue/O&D-15632`
 5. Submit a pull request.
 
-## Credits âœ’ï¸
+## Credits ✒️
 
 Richard Severich
 
-## License ðŸ“„
+## License 📄
 * Copyright (c) 2019 by Richard Severich.  All Rights Reserved.
 * This software is the confidential and proprietary information of
 * Richard Severich. ("Confidential Information").

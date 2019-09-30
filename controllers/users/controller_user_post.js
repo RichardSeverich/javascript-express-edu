@@ -1,6 +1,6 @@
 'use strict'
 
-const User = require('../models/user')
+const User = require('../../models/user')
 
 function saveUser(request, response) {
 	//console.log('POST  /api/clients')
@@ -13,12 +13,13 @@ function saveUser(request, response) {
 	user.career= request.body.career
 	user.email= request.body.email
 	user.type= request.body.type
-	
 	user.save((err, userStored) => {
 		if(err) { 
 			return response.status(500).send({message: `error to performs request to mongoDB: ${err}`}) 
 		}
-	response.status(201).send({user: userStored})
+	//response.status(201).send({user: userStored})
+	response.status(201).send({message: 'The user was stored successfully'})
+	
 	})
 }
 

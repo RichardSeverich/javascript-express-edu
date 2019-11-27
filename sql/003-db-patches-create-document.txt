@@ -1,28 +1,36 @@
 # Users
-db.user.insert({"id": 9928025,"password": "pass123","name":"Richard","last_name":"Severich","career":"Systems engineer","email": "richard.severich@gmail.com","type":"Engineer"})
-db.user.insert({"id":"9525468","password": "secret123","name":"Marcos","last_name":"Lara","career":"Electronic engineer","email": "marcos.lara@gmail.com","type":"Engineer"})
-db.user.insert({"id":"7896514","password": "com154","name":"Albert","last_name":"Einstein","career":"Physics","email": "albert.einstein@gmail.com","type":"Trainer"})
-db.user.insert({"id":"5814525","password": "sss888","name":"Sheldon","last_name":"Cooper","career":"Physics","email": "Sheldon.Cooper@gmail.com","type":"Trainer"})
-db.user.insert({"id":"8525469","password": "row555","name":"Isac","last_name":"Newton","career":"Physics","email": "Isac.Newton@gmail.com","type":"Admin"})
+db.user.insert({"_id":"9928025","nick_name":"rseveric","password":"pass123","name":"Richard","last_name":"Severich","career":"Systems engineer","email": "richard.severich@gmail.com","type":"Engineer"})
+db.user.insert({"_id":"9525468","nick_name":"mlara","password":"secret123","name":"Marcos","last_name":"Lara","career":"Electronic engineer","email": "marcos.lara@gmail.com","type":"Engineer"})
+db.user.insert({"_id":"7896514","nick_name":"aeinsten","password":"com154","name":"Albert","last_name":"Einstein","career":"Physics","email": "albert.einstein@gmail.com","type":"Trainer"})
+db.user.insert({"_id":"5814525","nick_name":"scooper","password":"sss888","name":"Sheldon","last_name":"Cooper","career":"Physics","email": "Sheldon.Cooper@gmail.com","type":"Trainer"})
+db.user.insert({"_id":"8525469","nick_name":"inewton","password":"row555","name":"Isac","last_name":"Newton","career":"Physics","email": "Isac.Newton@gmail.com","type":"Admin"})
+db.user.insert({"_id":"5925555","nick_name":"rgrames","password":"walking","name":"Rick","last_name":"Grames","career":"Systems engineer","email": "Rick.Grames@gmail.com","type":"Engineer"})
 
 # Courses
-db.course.insert({"id":"1","name": "TechGroup A"})
-db.course.insert({"id":"1","name": "TechGroup B"})
-db.course.insert({"id":"1","name": "TechGroup C"})
+db.course.insert({"_id":"1","name": "TechGroup Dev A"})
+db.course.insert({"_id":"2","name": "TechGroup Dev B"})
+db.course.insert({"_id":"3","name": "TechGroup Dev C"})
+db.course.insert({"_id":"4","name": "TechGroup DevOps A"})
+db.course.insert({"_id":"5","name": "TechGroup DevOps B"})
+db.course.insert({"_id":"6","name": "TechGroup DevOps C"})
+db.course.insert({"_id":"7","name": "TechGroup QA A"})
+db.course.insert({"_id":"8","name": "TechGroup QA B"})
+db.course.insert({"_id":"9","name": "TechGroup QA C"})
 
-# Course-Users
-db.course_user.insert({"id_course":"2","id_user": "9928025"})
-db.course_user.insert({"id_course":"2","id_user": "9525468"})
-db.course_user.insert({"id_course":"2","id_user": "7896514"})
+# course-Users
+db.course_user.insert({"id_course":"1","id_user": "9928025"})
+db.course_user.insert({"id_course":"1","id_user": "9525468"})
+db.course_user.insert({"id_course":"1","id_user": "7896514"})
 db.course_user.insert({"id_course":"2","id_user": "5814525"})
 db.course_user.insert({"id_course":"2","id_user": "8525469"})
+db.course_user.insert({"id_course":"2","id_user": "5925555"})
 
 # Modules
-db.module.insert({"id":"1","name": "Module 1: Software Development Fundamentals"})
-db.module.insert({"id":"2","name": "Module 2: Data Structure"})
-db.module.insert({"id":"3","name": "Module 3: Software design"})
-db.module.insert({"id":"4","name": "Module 4: Development UI"})
-db.module.insert({"id":"5","name": "Module 5: Development Back-end"})
+db.module.insert({"_id":"1","name": "Module 1: Software Development Fundamentals"})
+db.module.insert({"_id":"2","name": "Module 2: Data Structure"})
+db.module.insert({"_id":"3","name": "Module 3: Software design"})
+db.module.insert({"_id":"4","name": "Module 4: Development UI"})
+db.module.insert({"_id":"5","name": "Module 5: Development Back-end"})
 
 # Ratings
 db.rating.insert({"id_user":"9928025", "id_module": "1", "value": "90"})
@@ -33,5 +41,3 @@ db.rating.insert({"id_user":"9525468", "id_module": "1", "value": "80"})
 db.rating.insert({"id_user":"9525468", "id_module": "2", "value": "75"})
 db.rating.insert({"id_user":"9525468", "id_module": "3", "value": "85"})
 db.rating.insert({"id_user":"9525468", "id_module": "4", "value": "95"})
-
-

@@ -6,12 +6,15 @@ For the elaboration of this API we used the JavaScript, NodeJS, express and mong
 ## Prerequisites 🚀
 
 1. Install Windows 10    
-2. Install Node.js version 8.9.4.   
+2. Install Node.js version 8.9.4.
+3. Install docker mongo:4.1
 
 ## Installation 🔧
 
-1. Clone Repository:
+1. Clone Repository
 2. Install Dependencies: npm install
+3. Configure config.js with app host:port
+4. Configure config.js with docker host:port
 
 ## Usage (Execute) ⚙️
 
@@ -27,7 +30,8 @@ http://localhost:3001/api/v1/users/{user_id}
 {
     "user": [
         {
-            "id": 9928025,
+            "_id": 9928025,
+            "nick_name": "rseveric",
             "password": "pass123",
             "name": "Richard",
             "last_name": "Severich",
@@ -42,7 +46,8 @@ POST USERS
 http://localhost:3001/api/v1/users
 BODY:
 {
-    "id": 45215856,
+    "_id": 45215856,
+    "nick_name": "helmer",
     "password": "pass123",
     "name": "Elmer",
     "last_name": "Hermosa",
@@ -51,6 +56,23 @@ BODY:
     "type": "Training"
 }
 
+PUT USERS
+{Host}:{Port}/api/v1/users/{user_id}
+http://localhost:3001/api/v1/users/45215856
+BODY:
+{
+    "nick_name": "hermosa",
+    "password": "pass555",
+    "name": "Elmer",
+    "last_name": "Hermosa",
+    "career": "Electronic enginee",
+    "email": "Elmer.Hermosa@gmail.com",
+    "type": "Training"
+}
+
+DELETE USERS
+{Host}:{Port}/api/v1/users/{user_id}
+http://localhost:3001/api/v1/users/45215856
 ```
 
 ## Contributing 🖇️

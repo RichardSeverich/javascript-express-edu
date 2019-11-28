@@ -3,11 +3,14 @@
 const User = require('../../models/user')
 
 function getUsers(request, response) {
-	User.find({},(err, user) => {
-		if (err) {
-			return response.status(500).send({message: `error to performs request to mongoDB: ${err}`})
+	let dataBaseError = [];
+	User.find({},(error, users) => {
+		if (error) {
+			dataBaseError.push("Data base Error");
+			dataBaseError.push(error);
+			return response.status(500).send({dataBaseError})
 		}
-		response.status(200).send({user})
+		response.status(200).send({users})
 	})
 }
 

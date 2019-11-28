@@ -4,21 +4,30 @@ const User = require('../../models/user')
 const Mapping = require('../../mapping/user')
 const Validator = require('../../validators/user')
 
+
 function saveUser(request, response) {
+	// Validation Undefined
 	let user = Mapping.mapping(request);
-	let messages = Validator.validatorUndefined(user);
-	if(messages.length == 0){
-	    messages = Validator.validatorGeneric(user);
+	let validationMessage = Validator.validatorUndefined(user);
+	if(validationMessage.length == 0){
+	    validationMessage = Validator.validatorGeneric(user);
 	}
-	if(messages.length > 0){
-		return response.status(400).send({messages});
+	// Validation Generic
+	if(validationMessage.length > 0){
+		return response.status(400).send({validationMessage});
 	}
-	user.save((err, userStored) => {
-		if(err) { 
-			return response.status(500).send({message: `error to performs request to mongoDB: ${err}`}) 
-	    }
-	//response.status(201).send({user: userStored})
-	return response.status(201).send({message: 'The user was stored successfully'})
+	// Data Bases Connection.
+	let dataBaseError = [];
+	user.save((error, userStored) => {
+		if(error) { 
+			dataBaseError.push("Data base Error");
+			dataBaseError.push(error);
+			if(error.code = 11000){
+				return response.status(400).send({dataBaseError})
+			}
+			return response.status(500).send({dataBaseError})
+		}
+	    return response.status(201).send({message: 'The user was stored successfully'})
 	})
 }
 

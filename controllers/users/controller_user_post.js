@@ -4,7 +4,6 @@ const User = require('../../models/user')
 const Mapping = require('../../mapping/user')
 const Validator = require('../../validators/user')
 
-
 function saveUser(request, response) {
 	// Validation Undefined
 	let user = Mapping.mapping(request);

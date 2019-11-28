@@ -6,9 +6,12 @@ const Validator = require('../../validators/user')
 
 function saveUser(request, response) {
 	let user = Mapping.mapping(request);
-	let validationMessage = Validator.validator(user);
-	if(validationMessage !== 'Validation-Errors'){
-		return response.status(400).send({message: validationMessage});
+	let messages = Validator.validatorUndefined(user);
+	if(messages.length == 0){
+	    messages = Validator.validatorGeneric(user);
+	}
+	if(messages.length > 0){
+		return response.status(400).send({messages});
 	}
 	user.save((err, userStored) => {
 		if(err) { 

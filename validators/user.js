@@ -1,6 +1,6 @@
 'use strict'
 
-function validator(user){
+function validatorGeneric(user){
     const _id = user._id;
     const nick_name = user.nick_name;
     const password = user.password;
@@ -9,64 +9,81 @@ function validator(user){
     const career = user.career;
     const email = user.email;
     const type = user.type;
-    let message = "Validation-Errors";
-
+    let message = [];
     if(_id.length > 7 || _id.length < 7){
         //throw new Error('_id must be with 7 characters');
-        message = message + "  ";
-        message = message + '_id must be with 7 characters';
+        message.push('_id must be with 7 characters');
     }
-
-    if(nick_name.length < 3 || nick_name.length > 7){
-        //throw new Error('nick_name must be between 3 and 7 characters');
-        message = message + "  ";
-        message = message + 'nick_name must be between 3 and 7 characters';
+    var regexNumbers = /^\d+$/;
+    if(!regexNumbers.test(_id)){
+        message.push('_id must be numbers');
     }
-
-    if(password.length < 3 || password.length > 7){
-        //throw new Error('password must be between 3 and 7 characters');
-        message = message + "  ";
-        message = message + 'password must be between 3 and 7 characters';
+    if(nick_name.length < 3 || nick_name.length > 10){
+        message.push('nick_name must be between 3 and 10 characters');
     }
-
+    if(password.length < 6 || password.length > 10){
+        message.push('password must be between 5 and 7 characters');
+    }
     if(name.length < 3 || name.length > 24){
-        //throw new Error('name must be between 3 and 24 characters');
-        message = message + "  ";
-        message = message + 'name must be between 3 and 24 characters';
+        message.push('name must be between 3 and 24 characters');
     }
-
     if(last_name.length < 3 || last_name.length > 24){
-        //throw new Error('last_name must be between 3 and 24 characters');
-        message = message + "  ";
-        message = message + 'last_name must be between 3 and 24 characters';
+        message.push('last_name must be between 3 and 24 characters');
     }
-
     if(career.length < 3 || career.length > 24){
-        //throw new Error('career must be between 3 and 24 characters');
-        message = message + "  ";
-        message = message + 'career must be between 3 and 24 characters';
+        message.push('career must be between 3 and 24 characters');
     }
-
     if(email.length < 5 || email.length > 32){
-        //throw new Error('career must be between 5 and 32 characters');
-        message = message + "  ";
-        message = message + 'career must be between 5 and 32 characters';
+        message.push('email must be between 5 and 32 characters');
     }
-
     if(type.length < 3 || type.length > 10){
-        //throw new Error('type must be between 3 and 10 characters');
-        message = message + "  ";
-        message = message + 'type must be between 3 and 10 characters';
+        message.push('type must be between 3 and 10 characters');
     }
-    var regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    if(!regex.test(email)){
-        //throw new Error('email must be like someone@emailserver.com');
-        message = message + "  ";
-        message = message + 'email must be like someone@emailserver.com';
+    let regexEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    if(!regexEmail.test(email)){
+        message.push('email must be like someone@emailserver.com');
+    }
+    return message;
+}
+
+function validatorUndefined(user){
+    const _id = user._id;
+    const nick_name = user.nick_name;
+    const password = user.password;
+    const last_name = user.last_name;
+    const name = user.name;
+    const career = user.career;
+    const email = user.email;
+    const type = user.type;
+    let message = [];
+    if(typeof _id == 'undefined'){
+        message.push('_id is required');
+    }
+    if(nick_name == undefined){
+        message.push('nick_name is required');
+    }
+    if(password == undefined){
+        message.push('password is required');
+    }
+    if(last_name == undefined){
+        message.push('last_name is required');
+    }
+    if(name == undefined){
+        message.push('name is required');
+    }
+    if(career == undefined){
+        message.push('career is required');
+    }
+    if(email == undefined){
+        message.push('email is required');
+    }
+    if(type == undefined){
+        message.push('type is required');
     }
     return message;
 }
 
 module.exports = {
-	validator
+    validatorGeneric,
+    validatorUndefined
 }

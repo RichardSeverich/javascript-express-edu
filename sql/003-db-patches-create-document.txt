@@ -6,7 +6,7 @@ db.user.insert({"_id":"5814525","nick_name":"scooper","password":"sss888","name"
 db.user.insert({"_id":"8525469","nick_name":"inewton","password":"row555","name":"Isac","last_name":"Newton","career":"Physics","email": "Isac.Newton@gmail.com","type":"Admin"})
 db.user.insert({"_id":"5925555","nick_name":"rgrames","password":"walking","name":"Rick","last_name":"Grames","career":"Systems engineer","email": "Rick.Grames@gmail.com","type":"Engineer"})
 
-# Courses
+# Courses - no set.
 db.course.insert({"_id":"1","name": "TechGroup Dev A"})
 db.course.insert({"_id":"2","name": "TechGroup Dev B"})
 db.course.insert({"_id":"3","name": "TechGroup Dev C"})
@@ -17,13 +17,25 @@ db.course.insert({"_id":"7","name": "TechGroup QA A"})
 db.course.insert({"_id":"8","name": "TechGroup QA B"})
 db.course.insert({"_id":"9","name": "TechGroup QA C"})
 
-# course-Users
-db.course_user.insert({"id_course":"1","id_user": "9928025"})
-db.course_user.insert({"id_course":"1","id_user": "9525468"})
-db.course_user.insert({"id_course":"1","id_user": "7896514"})
-db.course_user.insert({"id_course":"2","id_user": "5814525"})
-db.course_user.insert({"id_course":"2","id_user": "8525469"})
-db.course_user.insert({"id_course":"2","id_user": "5925555"})
+# Courses
+db.course.insert({"_id":new ObjectId("5de09bfdc3c68622c07f7100"),"name": "TechGroup Dev A"})
+db.course.insert({"_id":new ObjectId("5de09bfdc3c68622c07f7101"),"name": "TechGroup Dev B"})
+db.course.insert({"_id":new ObjectId("5de09bfdc3c68622c07f7102"),"name": "TechGroup Dev C"})
+db.course.insert({"_id":new ObjectId("5de09bfdc3c68622c07f7103"),"name": "TechGroup DevOps A"})
+db.course.insert({"_id":new ObjectId("5de09bfdc3c68622c07f7104"),"name": "TechGroup DevOps B"})
+db.course.insert({"_id":new ObjectId("5de09bfdc3c68622c07f7105"),"name": "TechGroup DevOps C"})
+db.course.insert({"_id":new ObjectId("5de09bfdc3c68622c07f7106"),"name": "TechGroup QA A"})
+db.course.insert({"_id":new ObjectId("5de09bfdc3c68622c07f7107"),"name": "TechGroup QA B"})
+db.course.insert({"_id":new ObjectId("5de09bfdc3c68622c07f7108"),"name": "TechGroup QA C"})
+
+
+# course-users
+db.course_user.insert({"id_course":new ObjectId("5de09bfdc3c68622c07f7100"),"id_user": "9928025"})
+db.course_user.insert({"id_course":new ObjectId("5de09bfdc3c68622c07f7100"),"id_user": "9525468"})
+db.course_user.insert({"id_course":new ObjectId("5de09bfdc3c68622c07f7100"),"id_user": "7896514"})
+db.course_user.insert({"id_course":new ObjectId("5de09bfdc3c68622c07f7101"),"id_user": "5814525"})
+db.course_user.insert({"id_course":new ObjectId("5de09bfdc3c68622c07f7101"),"id_user": "8525469"})
+db.course_user.insert({"id_course":new ObjectId("5de09bfdc3c68622c07f7101"),"id_user": "5925555"})
 
 # Modules
 db.module.insert({"_id":"1","name": "Module 1: Software Development Fundamentals"})

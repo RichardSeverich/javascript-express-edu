@@ -53,7 +53,7 @@ BODY:
     "last_name": "Hermosa",
     "career": "Systems enginee",
     "email": "Elmer.Hermosa@gmail.com",
-    "type": "Training"
+    "type": "Trainer"
 }
 
 PUT USERS
@@ -67,7 +67,7 @@ BODY:
     "last_name": "Hermosa",
     "career": "Electronic enginee",
     "email": "Elmer.Hermosa@gmail.com",
-    "type": "Training"
+    "type": "Trainer"
 }
 
 DELETE USERS

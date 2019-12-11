@@ -28,7 +28,7 @@ GET USERS
 http://localhost:3001/api/v1/users
 http://localhost:3001/api/v1/users/{user_id}
 {
-    "user": [
+    "users": [
         {
             "_id": 9928025,
             "nick_name": "rseveric",
@@ -74,6 +74,53 @@ DELETE USERS
 {Host}:{Port}/api/v1/users/{user_id}
 http://localhost:3001/api/v1/users/45215856
 ```
+
+### COURSES
+```
+GET COURSES
+{Host}:{Port}/api/v1/courses
+{Host}:{Port}/api/v1/courses/{courser_id}
+http://localhost:3001/api/v1/courser
+http://localhost:3001/api/v1/courser/{course_id}
+{
+    "courses": [
+        {
+            "_id": "5de09bfdc3c68622c07f7100",
+            "name": "TechGroup Dev A"
+        },
+        {
+            "_id": "5de09bfdc3c68622c07f7101",
+            "name": "TechGroup Dev B"
+        },
+        {
+            "_id": "5de09bfdc3c68622c07f7102",
+            "name": "TechGroup Dev C"
+        }
+    ]
+}
+
+POST COURSES
+{Host}:{Port}/api/v1/courses
+http://localhost:3001/api/v1/courses
+BODY:
+{
+    "name": "TechGroup React A"
+}
+
+
+PUT COURSES
+{Host}:{Port}/api/v1/courses/{course_id}
+http://localhost:3001/api/v1/users/5de09bfdc3c68622c07f7100
+BODY:
+{
+    "name": "TechGroup React A"
+}
+
+DELETE COURSES
+{Host}:{Port}/api/v1/courses/{course_id}
+http://localhost:3001/api/v1/courses/5de09bfdc3c68622c07f7100
+```
+
 
 ## Contributing 🖇️
 

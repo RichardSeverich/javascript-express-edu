@@ -3,7 +3,7 @@
 const CourseUser = require('../../models/course-user')
 
 function deleteCourseUser(request, response) {
-	let courseUserId = request.params.courseId
+	let courseUserId = request.params.courseUserId
 	let dataBaseError = [];
 	CourseUser.findByIdAndRemove(courseUserId, (error, courseUserStored) => {
 		if(error){

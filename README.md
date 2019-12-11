@@ -80,7 +80,7 @@ http://localhost:3001/api/v1/users/45215856
 GET COURSES
 {Host}:{Port}/api/v1/courses
 {Host}:{Port}/api/v1/courses/{courser_id}
-http://localhost:3001/api/v1/courser
+http://localhost:3001/api/v1/courses
 http://localhost:3001/api/v1/courser/{course_id}
 {
     "courses": [
@@ -120,6 +120,56 @@ DELETE COURSES
 {Host}:{Port}/api/v1/courses/{course_id}
 http://localhost:3001/api/v1/courses/5de09bfdc3c68622c07f7100
 ```
+
+### COURSES - USER RELATION
+```
+GET COURSES - USER
+{Host}:{Port}/api/v1/courses-users
+{Host}:{Port}/api/v1/courses-users/{course-user_id}
+http://localhost:3001/api/v1/courses-users
+http://localhost:3001/api/v1/courses-users/{course-user_id}
+{
+    "courses_users": [
+        {
+            "_id": "5de55dd86df08cf4eab199d8",
+            "id_user": "9928025"
+        },
+        {
+            "_id": "5de55dd86df08cf4eab199d9",
+            "id_user": "9525468"
+        },
+        {
+            "_id": "5de55dd86df08cf4eab199da",
+            "id_user": "7896514"
+        }
+    ]
+}
+
+POST COURSES - USER
+{Host}:{Port}/api/v1/courses-users
+http://localhost:3001/api/v1/courses-users
+BODY:
+{
+   "id_course": "5de09bfdc3c68622c07f7102",
+   "id_user": "5928025"
+}
+
+
+PUT COURSES - USER
+{Host}:{Port}/api/v1/courses-users/{course-user_id}
+http://localhost:3001/api/v1/courses-users/5de55dd86df08cf4eab199d8
+BODY:
+{
+   "id_course": "5de09bfdc3c68622c07f7102",
+   "id_user": "5928025"
+}
+
+DELETE COURSES - USER
+{Host}:{Port}/api/v1/courses-users/{course_user_id}
+http://localhost:3001/api/v1/courses-users/5de55dd86df08cf4eab199d8
+
+```
+
 
 
 ## Contributing 🖇️

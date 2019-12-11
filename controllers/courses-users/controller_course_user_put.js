@@ -6,7 +6,7 @@ const Validator = require('../../validators/course-user')
 function updateCourseUser(request, response) {
 	// Validation Undefined
 	let courseUser = new CourseUser();
-    courseUser._id = request.params.courseId;
+    courseUser._id = request.params.courseUserId;
 	courseUser.id_course = request.body.id_course;
 	courseUser.id_user = request.body.id_user;
 	let validationMessage = Validator.validatorUndefined(courseUser);
@@ -31,7 +31,7 @@ function updateCourseUser(request, response) {
 		if(!courseUserUpdated) {
 			return response.status(404).send({message: 'CourseUser relation does not exist'})
 		}
-		response.status(200).send({message: "The course-user relation was updated successfully"})
+		response.status(200).send({message: "The CourseUser relation was updated successfully"})
 	})
 }
 

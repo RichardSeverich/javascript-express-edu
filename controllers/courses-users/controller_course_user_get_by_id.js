@@ -3,7 +3,7 @@
 const CourseUser = require('../../models/course-user')
 
 function getCourseUserById(request, response) {
-	let courseUserId = request.params.courseId
+	let courseUserId = request.params.courseUserId
 	let dataBaseError = [];
 	CourseUser.findById(courseUserId, (error, courseUserStored) => {
 		if(error){

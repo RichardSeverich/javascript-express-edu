@@ -216,7 +216,7 @@ DELETE MODULES
 http://localhost:3001/api/v1/modules/5de09bfdc3c68622c07f7771
 ```
 
-### SCORES: MODULE - COURSE RELATION
+### SCORES: MODULE-USERS RELATION
 ```
 GET SCORES
 {Host}:{Port}/api/v1/scores

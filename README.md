@@ -79,7 +79,7 @@ http://localhost:3001/api/v1/users/45215856
 ```
 GET COURSES
 {Host}:{Port}/api/v1/courses
-{Host}:{Port}/api/v1/courses/{courser_id}
+{Host}:{Port}/api/v1/courses/{course_id}
 http://localhost:3001/api/v1/courses
 http://localhost:3001/api/v1/courser/{course_id}
 {
@@ -110,7 +110,7 @@ BODY:
 
 PUT COURSES
 {Host}:{Port}/api/v1/courses/{course_id}
-http://localhost:3001/api/v1/users/5de09bfdc3c68622c07f7100
+http://localhost:3001/api/v1/courses/5de09bfdc3c68622c07f7100
 BODY:
 {
     "name": "TechGroup React A"
@@ -170,7 +170,108 @@ http://localhost:3001/api/v1/courses-users/5de55dd86df08cf4eab199d8
 
 ```
 
+### MODULES
+```
+GET MODULES
+{Host}:{Port}/api/v1/modules
+{Host}:{Port}/api/v1/modules/{module_id}
+http://localhost:3001/api/v1/modules
+http://localhost:3001/api/v1/modules/{module_id}
+{
+    "modules": [
+        {
+            "_id": "5de09bfdc3c68622c07f7771",
+            "name": "Module 1: Software Development Fundamentals"
+        },
+        {
+            "_id": "5de09bfdc3c68622c07f7772",
+            "name": "Module 2: Data Structure"
+        },
+        {
+            "_id": "5de09bfdc3c68622c07f7773",
+            "name": "Module 3: Software design"
+        }
+    ]
+}
 
+POST MODULES
+{Host}:{Port}/api/v1/modules
+http://localhost:3001/api/v1/modules
+BODY:
+{
+    "name": "Module 1: Software Development Fundamentals"
+}
+
+
+PUT MODULES
+{Host}:{Port}/api/v1/modules/{module_id}
+http://localhost:3001/api/v1/modules/5de09bfdc3c68622c07f7771
+BODY:
+{
+     "name": "Module 1: Software Development Fundamentals"
+}
+
+DELETE MODULES
+{Host}:{Port}/api/v1/modules/{module_id}
+http://localhost:3001/api/v1/modules/5de09bfdc3c68622c07f7771
+```
+
+### SCORES: MODULE - COURSE RELATION
+```
+GET SCORES
+{Host}:{Port}/api/v1/scores
+{Host}:{Port}/api/v1/scores/{score_id}
+http://localhost:3001/api/v1/scores
+http://localhost:3001/api/v1/scores/{score_id}
+{
+    "scores": [
+        {
+            "_id": "5de09bfdc3c68622c07f9991",
+            "id_user": "9928025",
+            "id_module": "5de09bfdc3c68622c07f7771",
+            "value": "90"
+        },
+        {
+            "_id": "5de09bfdc3c68622c07f9992",
+            "id_user": "9928025",
+            "id_module": "5de09bfdc3c68622c07f7772",
+            "value": "80"
+        },
+        {
+            "_id": "5de09bfdc3c68622c07f9993",
+            "id_user": "9928025",
+            "id_module": "5de09bfdc3c68622c07f7773",
+            "value": "95"
+        }
+    ]
+}
+
+POST SCORES
+{Host}:{Port}/api/v1/scores
+http://localhost:3001/api/v1/scores
+BODY:
+{
+    "id_user": "9928025",
+    "id_module": "5de09bfdc3c68622c07f7771",
+    "value": "90"
+}
+
+
+PUT SCORES
+{Host}:{Port}/api/v1/scores/{score_id}
+http://localhost:3001/api/v1/scores/5de09bfdc3c68622c07f9991
+BODY:
+{
+    "id_user": "9928025",
+    "id_module": "5de09bfdc3c68622c07f7771",
+    "value": "90"
+}
+
+DELETE SCORES
+{Host}:{Port}/api/v1/scores/{score_id}
+http://localhost:3001/api/v1/scores/5de09bfdc3c68622c07f9991
+
+```
 
 ## Contributing 🖇️
 

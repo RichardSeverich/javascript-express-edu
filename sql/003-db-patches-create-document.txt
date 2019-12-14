@@ -32,7 +32,7 @@ db.module.insert({"_id":"5de09bfdc3c68622c07f7773","name": "Module 3: Software d
 db.module.insert({"_id":"5de09bfdc3c68622c07f7774","name": "Module 4: Development UI"})
 db.module.insert({"_id":"5de09bfdc3c68622c07f7775","name": "Module 5: Development Back-end"})
 
-# Ratings
+# Scores
 db.score.insert({"_id":"5de09bfdc3c68622c07f9991","id_user":"9928025", "id_module": "5de09bfdc3c68622c07f7771", "value": "90"})
 db.score.insert({"_id":"5de09bfdc3c68622c07f9992","id_user":"9928025", "id_module": "5de09bfdc3c68622c07f7772", "value": "80"})
 db.score.insert({"_id":"5de09bfdc3c68622c07f9993","id_user":"9928025", "id_module": "5de09bfdc3c68622c07f7773", "value": "95"})

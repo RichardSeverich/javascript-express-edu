@@ -1,13 +1,15 @@
 # Education App
+
 This API performs POST, GET, PUT and DELETE.
-This API is about a store and has two end points users and courses. 
-For the elaboration of this API we used the JavaScript, NodeJS, express and mongoDB
+This API can deploy with docker container.
+This API we used the JavaScript, express and mongoDB
 
 ## Prerequisites 🚀
 
-1. Install Windows 10    
+1. Install Windows 10
 2. Install Node.js version 8.9.4.
-3. Install docker mongo:4.1
+3. Install docker.
+4. Install docker mongo:4.1
 
 ## Installation 🔧
 
@@ -15,12 +17,29 @@ For the elaboration of this API we used the JavaScript, NodeJS, express and mong
 2. Install Dependencies: npm install
 3. Configure config.js with app host:port
 4. Configure config.js with docker host:port
+5. start docker container: docker run -d --name mongodb -p 27017:27017 mongo:4.1
+6. enter to containe: docker exec -it mongodb bash
+7. enter mongo shell: mongo
+8. execute all queries in : sql folder.
+9. Optional: deploy app in docker: you should execute: /docker_bin/run-create-image.bat
+10. Optional: then you should execute: /docker_bin/run-create-image.bat
+
+## Documentation
+
+### Diagram-architecture
+
+![Screenshot](documentation/javascript-express-edu-architecture.jpg)
+
+### Diagram-entity-relation
+
+![Screenshot](documentation/javascript-express-edu-entity-relation.jpg)
 
 ## Usage (Execute) ⚙️
 
 1. npm start
 
 ### USERS
+
 ```
 GET USERS
 {Host}:{Port}/api/v1/users
@@ -76,6 +95,7 @@ http://localhost:3001/api/v1/users/45215856
 ```
 
 ### COURSES
+
 ```
 GET COURSES
 {Host}:{Port}/api/v1/courses
@@ -122,6 +142,7 @@ http://localhost:3001/api/v1/courses/5de09bfdc3c68622c07f7100
 ```
 
 ### COURSES - USER RELATION
+
 ```
 GET COURSES - USER
 {Host}:{Port}/api/v1/courses-users
@@ -171,6 +192,7 @@ http://localhost:3001/api/v1/courses-users/5de55dd86df08cf4eab199d8
 ```
 
 ### MODULES
+
 ```
 GET MODULES
 {Host}:{Port}/api/v1/modules
@@ -217,6 +239,7 @@ http://localhost:3001/api/v1/modules/5de09bfdc3c68622c07f7771
 ```
 
 ### SCORES: MODULE-USERS RELATION
+
 ```
 GET SCORES
 {Host}:{Port}/api/v1/scores
@@ -286,9 +309,10 @@ http://localhost:3001/api/v1/scores/5de09bfdc3c68622c07f9991
 Richard Severich
 
 ## License 📄
-* Copyright (c) 2019 by Richard Severich.  All Rights Reserved.
-* This software is the confidential and proprietary information of
-* Richard Severich. ("Confidential Information").
-* You may not disclose such Confidential Information, and may only
-* use such Confidential Information in accordance with the terms of
-* the license agreement you entered into with Richard Severich.
+
+- Copyright (c) 2019 by Richard Severich. All Rights Reserved.
+- This software is the confidential and proprietary information of
+- Richard Severich. ("Confidential Information").
+- You may not disclose such Confidential Information, and may only
+- use such Confidential Information in accordance with the terms of
+- the license agreement you entered into with Richard Severich.

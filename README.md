@@ -4,6 +4,8 @@ This API performs POST, GET, PUT and DELETE.
 This API can deploy with docker container.
 This API we used the JavaScript, express and mongoDB
 
+This project was performed using NodeJS, Express, Mongo DB data bases, Routes, Mongoose, Schemas.
+
 ## Prerequisites 🚀
 
 1. Install Windows 10
